@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+    <title>Cadastro de Análise</title>
+</h:head>
+<h:body>
+    <h:form>
+        <h:panelGrid columns="2">
+            <h:outputLabel for="nomeEnsaio" value="Nome do Ensaio:" />
+            <h:inputText id="nomeEnsaio" value="#{analiseMB.analise.nomeEnsaio}" required="true" />
+
+            <h:outputLabel for="nomeMetodo" value="Nome do Método:" />
+            <h:selectOneMenu id="nomeMetodo" value="#{analiseMB.analise.nomeMetodo}">
+                <f:selectItem itemLabel="Método 1" itemValue="metodo1"/>
+                <f:selectItem itemLabel="Método 2" itemValue="metodo2"/>
+            </h:selectOneMenu>
+
+            <h:outputLabel for="nomeMatriz" value="Nome da Matriz:" />
+            <h:selectOneMenu id="nomeMatriz" value="#{analiseMB.analise.nomeMatriz}">
+                <f:selectItem itemLabel="Matriz 1" itemValue="matriz1"/>
+                <f:selectItem itemLabel="Matriz 2" itemValue="matriz2"/>
+            </h:selectOneMenu>
+
+            <h:outputLabel for="nomeUnidade" value="Nome da Unidade:" />
+            <h:selectOneMenu id="nomeUnidade" value="#{analiseMB.analise.nomeUnidade}">
+                <f:selectItem itemLabel="Unidade 1" itemValue="unidade1"/>
+                <f:selectItem itemLabel="Unidade 2" itemValue="unidade2"/>
+            </h:selectOneMenu>
+
+            <h:outputLabel for="preco" value="Preço:" />
+            <h:inputText id="preco" value="#{analiseMB.analise.preco}" required="true" />
+
+            <h:commandButton value="Salvar" action="#{analiseMB.salvar}" />
+            <h:outputText value="#{analiseMB.mensagem}" rendered="#{not empty analiseMB.mensagem}" />
+        </h:panelGrid>
+    </h:form>
+</h:body>
+</html>
